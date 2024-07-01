@@ -1,0 +1,142 @@
+---
+import {Code} from "astro/components"
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+
+    <style>
+      body {
+        background-color: #aaaaaa;
+      }
+    </style>
+	</head>
+	<body>
+		<h1>{"<Code/> component's defaultColor option test"}</h1>
+
+    <Code
+      lang="js"
+      themes={{
+        light: "light-plus",
+        dark: "dark-plus",
+        dracula: "dracula"
+      }}
+      code={
+`// "defaultColor" is not set
+
+// Expected behaviour:
+// "light-plus" theme is applied
+
+function exampleFunc() {
+  console.log("Hello world")
+}`
+      }
+    />
+
+    <Code
+      lang="js"
+      themes={{
+        light: "light-plus",
+        dark: "dark-plus",
+        dracula: "dracula"
+      }}
+      defaultColor="light"
+      code={
+`// "defaultColor" = "light"
+
+// Expected behaviour:
+// "light-plus" theme is applied
+
+function exampleFunc() {
+  console.log("Hello world")
+}`
+      }
+    />
+
+    <Code
+      lang="js"
+      themes={{
+        light: "light-plus",
+        dark: "dark-plus",
+        dracula: "dracula"
+      }}
+      defaultColor="dark"
+      code={
+`// "defaultColor" = "dark"
+
+// Expected behaviour:
+// "dark-plus" theme is applied
+
+function exampleFunc() {
+  console.log("Hello world")
+}`
+      }
+    />
+
+    <Code
+      lang="js"
+      themes={{
+        light: "light-plus",
+        dark: "dark-plus",
+        dracula: "dracula"
+      }}
+      defaultColor="dracula"
+      code={
+`// "defaultColor" = "dracula"
+
+// Expected behaviour:
+// "dracula" theme is applied
+
+function exampleFunc() {
+  console.log("Hello world")
+}`
+      }
+    />
+
+    <Code
+      lang="js"
+      themes={{
+        light: "light-plus",
+        dark: "dark-plus",
+        dracula: "dracula"
+      }}
+      defaultColor={false}
+      code={
+`// "defaultColor" = false
+
+// Expected behaviour:
+// No theme is applied
+
+function exampleFunc() {
+  console.log("Hello world")
+}`
+      }
+    />
+
+    <!-- <Code
+      lang="js"
+      themes={{
+        light: "light-plus",
+        dark: "dark-plus",
+        dracula: "dracula"
+      }}
+      defaultColor="asd"
+      code={
+`// "defaultColor" = "asd", which is undefined in "themes"
+
+// Expected behaviour:
+// An error is thrown
+
+function exampleFunc() {
+  console.log("Hello world")
+}`
+      }
+    /> -->
+
+	</body>
+</html>
